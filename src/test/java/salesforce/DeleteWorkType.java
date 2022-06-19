@@ -7,12 +7,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DeleteWorkType {
 
-	public static void main(String[] args) throws InterruptedException {
+	@Test
+	public void deleteWorkType() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver",
 				"C:\\Users\\yogur\\Learning Selenium\\MavenProject\\drivers\\chromedriver.exe");
 

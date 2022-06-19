@@ -6,43 +6,19 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class NewRefund {
+public class NewRefund extends BaseClass {
 
-	public static void main(String[] args) {
+	@Test
+	public void newRefund() throws InterruptedException {
 		
-		// Open Browser
-		WebDriverManager.chromedriver().setup();
-
-		// Disable Notification
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--disable-notifications");
-
-		// Chrome Instance
-		ChromeDriver driver = new ChromeDriver(options);
-
+		
 		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 
-		// Load the salesforce url
-		driver.get("https://login.salesforce.com/");
-
-		// Maximizing the window
-		driver.manage().window().maximize();
-
-		// Enter the username
-		WebElement username = driver.findElement(By.id("username"));
-		username.sendKeys("makaia@testleaf.com");
-
-		// Enter the password
-		WebElement password = driver.findElement(By.id("password"));
-		password.sendKeys("BootcampSel@123");
-
-		// Login to the application
-		WebElement login = driver.findElement(By.id("Login"));
-		login.click();
-
+		Thread.sleep(5000);
 		// Click on the Global Actions SVG icon
 		WebElement action = driver.findElement(By.xpath("//div[@class='slds-icon-waffle']"));
 		driver.executeScript("arguments[0].click();", action);
@@ -62,6 +38,8 @@ public class NewRefund {
 		// Click on the refund
 		WebElement refund = driver.findElement(By.xpath("//span[text()='Refunds']"));
 		refund.click();
+		
+		Thread.sleep(3000);
 		
 		// Click on new button
 		WebElement newRefund = driver.findElement(By.xpath("//div[@title='New']"));
@@ -102,14 +80,14 @@ public class NewRefund {
 		WebElement save = driver.findElement(By.xpath("//button[@title='Save']"));
 		save.click();
 		
-		//Verify the refund created
-		String text = driver.findElement(By.xpath("//span[contains(@class,'toastMessage')]")).getText();
-		System.out.println(text);
-		if(text.contains("created")) {
-			System.out.println("New Refund Created");
-		}else {
-			System.out.println("New Refund not Created");
-		}
+//		//Verify the refund created
+//		String text = driver.findElement(By.xpath("//span[contains(@class,'toastMessage')]")).getText();
+//		System.out.println(text);
+//		if(text.contains("created")) {
+//			System.out.println("New Refund Created");
+//		}else {
+//			System.out.println("New Refund not Created");
+//		}
 		
 	}
 

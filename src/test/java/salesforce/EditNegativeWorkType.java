@@ -7,19 +7,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class EditNegativeWorkType {
 
-	public static void main(String[] args) throws InterruptedException {
+	@Test
+	public void negativeWorkTypes() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver",
 				"C:\\Users\\yogur\\Learning Selenium\\MavenProject\\drivers\\chromedriver.exe");
 
 		// Open Browser
 		WebDriverManager.chromedriver().setup();
 
-		// Disable Notification
+		// Disable Notification in the browser
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-notifications");
 
@@ -27,6 +30,7 @@ public class EditNegativeWorkType {
 		ChromeDriver driver = new ChromeDriver(options);
 
 		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
+		WebDriverWait wait = new WebDriverWait(driver,60);
 
 		// Load the salesforce url
 		driver.get("https://login.salesforce.com/");

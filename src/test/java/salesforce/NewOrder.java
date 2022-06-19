@@ -10,12 +10,14 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class NewOrder {
 
-	public static void main(String[] args) throws InterruptedException {
+	@Test
+	public void newOrder() throws InterruptedException {
 		// // Open Browser
 		WebDriverManager.chromedriver().setup();
 

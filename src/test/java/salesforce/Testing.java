@@ -3,6 +3,8 @@ package salesforce;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.util.Calendar;
@@ -27,22 +29,37 @@ public class Testing {
 
 	public static void main(String[] args) throws ParseException, InterruptedException {
 		
-		// Open Browser
-		WebDriverManager.chromedriver().setup();
-
-		// Disable Notification
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--disable-notifications");
-		options.setExperimentalOption("debuggerAddress", "localhost:9014");
-
-		// Chrome Instance
-		ChromeDriver driver = new ChromeDriver(options);
-
-		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
+//		// Open Browser
+//		WebDriverManager.chromedriver().setup();
+//
+//		// Disable Notification
+//		ChromeOptions options = new ChromeOptions();
+//		options.addArguments("--disable-notifications");
+//		options.setExperimentalOption("debuggerAddress", "localhost:9014");
+//
+//		// Chrome Instance
+//		ChromeDriver driver = new ChromeDriver(options);
+//
+//		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
+//		
 		
+//		SimpleDateFormat formatter = new SimpleDateFormat("MMM dd, yyyy, hh:mm aa z");
+//		
+//		DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter
+//				.ofPattern("MM dd, yyyy, hh:mm a z");
+//		
+//		String date1 = "Jun 18, 2022 1:19 PM (UTC+05:30)";
+//		//Instance with given zone
+//		ZonedDateTime zdtInstanceAtOffset = ZonedDateTime.parse(date1);
+//
+//		//Instance in UTC
+//		ZonedDateTime zdtInstanceAtUTC = zdtInstanceAtOffset.withZoneSameInstant(ZoneOffset.UTC);
+//		String dateStringInUTC = zdtInstanceAtUTC.format(DATE_TIME_FORMATTER);
+//
+//		
+//		System.out.println(dateStringInUTC);
 		
-//		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy, hh:mm aa");
-//		String date1 = "6/4/2022, 10:01 AM";
+
 //		String date2 = "6/4/2022, 10:24 PM";
 //		
 //		Date parse = formatter.parse(date1);
@@ -79,13 +96,7 @@ public class Testing {
 		
 
 				
-				// Set the Date
-		
-		driver.findElement(By.xpath("//button[@title='Save']/span")).click();
-
-		
-		
-		
+			
 
 	}
 

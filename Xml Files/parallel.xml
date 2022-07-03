@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests" thread-count ="5" >
+	<parameter name="url" value="https://login.salesforce.com/" />
+	<parameter name="username" value="makaia@testleaf.com" />
+	<parameter name="password" value="BootcampSel@123" />
+	
+		<test  name="Test" verbose="5" thread-count="2">
+		<classes>
+			<class name="salesforce.OpportunitySorting" />
+			</classes>
+		</test> <!-- Test -->
+		<test  name="Test2" verbose="5" thread-count="2">
+		<classes>
+			<class name="salesforce.NewRefund" />
+			</classes>
+		</test>
+</suite> <!-- Suite -->

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="36067" started-at="2022-07-03T19:59:34 IST" finished-at="2022-07-03T20:00:10 IST">
+    <groups>
+    </groups>
+    <test name="test" duration-ms="36067" started-at="2022-07-03T19:59:34 IST" finished-at="2022-07-03T20:00:10 IST">
+      <class name="testcases.ServiceAppointment">
+        <test-method status="PASS" signature="startBrowser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcases.ServiceAppointment@376b4233]" name="startBrowser" is-config="true" duration-ms="7579" started-at="2022-07-03T19:59:34 IST" finished-at="2022-07-03T19:59:42 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://login.salesforce.com/]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[makaia@testleaf.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BootcampSel@123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startBrowser -->
+        <test-method status="PASS" signature="serviceAppointment()[pri:0, instance:testcases.ServiceAppointment@376b4233]" name="serviceAppointment" duration-ms="28440" started-at="2022-07-03T19:59:42 IST" finished-at="2022-07-03T20:00:10 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- serviceAppointment -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:testcases.ServiceAppointment@376b4233]" name="closeBrowser" is-config="true" duration-ms="5202" started-at="2022-07-03T20:00:10 IST" finished-at="2022-07-03T20:00:16 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- testcases.ServiceAppointment -->
+    </test> <!-- test -->
+  </suite> <!-- Suite -->
+</testng-results>

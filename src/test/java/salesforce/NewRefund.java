@@ -3,6 +3,7 @@ package salesforce;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -15,13 +16,12 @@ public class NewRefund extends BaseClass {
 	@Test
 	public void newRefund() throws InterruptedException {
 		
+		executor = (JavascriptExecutor) driver; 
 		
-		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
-
 		Thread.sleep(5000);
 		// Click on the Global Actions SVG icon
 		WebElement action = driver.findElement(By.xpath("//div[@class='slds-icon-waffle']"));
-		driver.executeScript("arguments[0].click();", action);
+		executor.executeScript("arguments[0].click();", action);
 
 		// Click on View All
 		WebElement viewAll = driver.findElement(By.xpath("//button[text()='View All']"));

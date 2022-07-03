@@ -1,5 +1,6 @@
 package salesforce;
 
+import java.awt.Point;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -25,17 +26,30 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Testing {
+public class Testing extends BaseClass{
 
 	public static void main(String[] args) throws ParseException, InterruptedException {
 		
 //		// Open Browser
-//		WebDriverManager.chromedriver().setup();
+		WebDriverManager.chromedriver().setup();
 //
 //		// Disable Notification
-//		ChromeOptions options = new ChromeOptions();
-//		options.addArguments("--disable-notifications");
-//		options.setExperimentalOption("debuggerAddress", "localhost:9014");
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--disable-notifications");
+		options.setExperimentalOption("debuggerAddress", "localhost:9014");
+		
+		ChromeDriver driver = new ChromeDriver(options);
+		Thread.sleep(2000);
+		Actions actions = new Actions(driver);
+		WebElement from = driver.findElement(By.xpath("//img[@id='analytics:chart-pie']"));
+		
+		WebElement to = driver.findElement(By.xpath("//div[contains(@class,'canvasItemNewComponentDropZone')]"));
+		actions.clickAndHold(from).release(to).build().perform();
+		
+		org.openqa.selenium.Point point = from.getLocation();
+		
+		System.out.println(point.x +" "+point.y);
+		
 //
 //		// Chrome Instance
 //		ChromeDriver driver = new ChromeDriver(options);
